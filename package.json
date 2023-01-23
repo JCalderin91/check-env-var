@@ -1,6 +1,6 @@
 {
   "name": "check-env-var",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Verify that all environment variables used are available in the environment.",
   "main": "src/index.js",
   "bin": "src/index.js",
