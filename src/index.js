@@ -12,13 +12,11 @@ const baseDir = './'
 const files = []
 const envFilePath = `./${envName}`
 
-let countFiles = 0
 let usedEnvVars = []
 let match = []
 
 function searchFiles(dir) {
   fs.readdirSync(dir).forEach((file) => {
-    countFiles += 1
     const filePath = path.join(dir, file)
     const fileStat = fs.lstatSync(filePath)
     if (fileStat.isDirectory()) {
@@ -59,7 +57,7 @@ usedEnvVars.map((envVar) => {
   }
 })
 
-countFiles = new Intl.NumberFormat('de-DE').format(countFiles)
+const countFiles = new Intl.NumberFormat('de-DE').format(files.length)
 
 console.log(`Files scanned: ${countFiles}`)
 console.timeEnd('Scanning duration')
